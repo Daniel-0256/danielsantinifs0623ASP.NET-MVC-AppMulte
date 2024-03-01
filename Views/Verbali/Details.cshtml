@@ -1,0 +1,30 @@
+﻿@model AppMulte.Models.Verbale
+
+<h2>Dettagli Verbale</h2>
+
+<div>
+    <h4>ID Verbale: @Model.IDVerbale</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Data Violazione</dt>
+        <dd class="col-sm-10">@Model.DataViolazione</dd>
+
+        <dt class="col-sm-2">Indirizzo Violazione</dt>
+        <dd class="col-sm-10">@Model.IndirizzoViolazione</dd>
+
+        <dt class="col-sm-2">ID Agente</dt>
+        <dd class="col-sm-10">@Model.IDAgente</dd>
+
+        <dt class="col-sm-2">Data Trascrizione Verbale</dt>
+        <dd class="col-sm-10">@Model.DataTrascrizioneVerbale</dd>
+
+        <dt class="col-sm-2">Importo</dt>
+        <dd class="col-sm-10">@Model.Importo</dd>
+
+        <dt class="col-sm-2">Decurtamento Punti</dt>
+        <dd class="col-sm-10">@Model.DecurtamentoPunti</dd>
+    </dl>
+</div>
+
+<a asp-action="Index">Torna all'elenco</a>
+

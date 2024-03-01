@@ -1,0 +1,36 @@
+﻿@model IEnumerable<AppMulte.Models.Anagrafica>
+
+<h2>Anagrafica</h2>
+
+<p>
+    @Html.ActionLink("Crea Nuovo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>Cognome</th>
+        <th>Nome</th>
+        <th>Indirizzo</th>
+        <th>Città</th>
+        <th>CAP</th>
+        <th>Codice Fiscale</th>
+        <th></th>
+    </tr>
+
+    @foreach (var persona in Model)
+    {
+        <tr>
+            <td>@persona.Cognome</td>
+            <td>@persona.Nome</td>
+            <td>@persona.Indirizzo</td>
+            <td>@persona.Citta</td>
+            <td>@persona.CAP</td>
+            <td>@persona.Cod_Fisc</td>
+            <td>
+                @Html.ActionLink("Modifica", "Edit", new { id = persona.IDAnagrafica }) |
+                @Html.ActionLink("Dettagli", "Details", new { id = persona.IDAnagrafica }) |
+                @Html.ActionLink("Elimina", "Delete", new { id = persona.IDAnagrafica })
+            </td>
+        </tr>
+    }
+</table>
+

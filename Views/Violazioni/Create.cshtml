@@ -1,0 +1,11 @@
+﻿@model AppMulte.Models.Violazione
+
+<h2>Nuova Violazione</h2>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label>Descrizione</label>
+        <input asp-for="Descrizione" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Salva</button>
+</form>

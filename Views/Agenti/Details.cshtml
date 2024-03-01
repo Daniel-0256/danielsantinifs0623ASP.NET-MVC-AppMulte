@@ -1,0 +1,13 @@
+﻿@model AppMulte.Models.Agente
+
+<h2>Dettagli Agente</h2>
+
+<div>
+    <h4>Nome: @Model.NomeAgente</h4>
+    <h4>Cognome: @Model.CognomeAgente</h4>
+</div>
+<p>
+    @Html.ActionLink("Modifica", "Edit", new { id = Model.IDAgente }) |
+    @Html.ActionLink("Indietro alla Lista", "Index")
+</p>
+

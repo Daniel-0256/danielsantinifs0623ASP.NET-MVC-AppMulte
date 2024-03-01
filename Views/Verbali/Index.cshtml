@@ -1,0 +1,38 @@
+﻿@model IEnumerable<AppMulte.Models.Verbale>
+
+<h2>Elenco Verbali</h2>
+
+<p>
+    @Html.ActionLink("Crea Nuovo", "Create")
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Data Violazione</th>
+            <th>Indirizzo Violazione</th>
+            <th>ID Agente</th>
+            <th>Data Trascrizione Verbale</th>
+            <th>Importo</th>
+            <th>Decurtamento Punti</th>
+            <th>Azioni</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var verbale in Model)
+        {
+            <tr>
+                <td>@verbale.DataViolazione</td>
+                <td>@verbale.IndirizzoViolazione</td>
+                <td>@verbale.IDAgente</td>
+                <td>@verbale.DataTrascrizioneVerbale</td>
+                <td>@verbale.Importo</td>
+                <td>@verbale.DecurtamentoPunti</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@verbale.IDVerbale">Modifica</a> |
+                    <a asp-action="Details" asp-route-id="@verbale.IDVerbale">Dettagli</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

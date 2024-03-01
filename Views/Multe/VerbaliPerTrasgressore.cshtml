@@ -1,0 +1,22 @@
+﻿@model List<AppMulte.Models.VerbaliPerTrasgressore>
+
+<h2>Verbali per Trasgressore</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Trasgressore</th>
+            <th>Numero Verbali</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Trasgressore.Cognome, @item.Trasgressore.Nome</td>
+                <td>@item.NumeroVerbali</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

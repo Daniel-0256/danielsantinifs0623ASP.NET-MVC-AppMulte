@@ -1,0 +1,23 @@
+﻿@model AppMulte.Models.Multa
+
+<div>
+    <h4>Dettagli Multa</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">ID Multa</dt>
+        <dd class="col-sm-10">@Model.IDMulta</dd>
+
+        <dt class="col-sm-2">ID Anagrafica</dt>
+        <dd class="col-sm-10">@Model.IDAnagrafica</dd>
+
+        <dt class="col-sm-2">ID Verbale</dt>
+        <dd class="col-sm-10">@Model.IDVerbale</dd>
+
+        <dt class="col-sm-2">ID Violazione</dt>
+        <dd class="col-sm-10">@Model.IDViolazione</dd>
+    </dl>
+    <div>
+        @Html.ActionLink("Modifica", "Edit", new { id = Model.IDMulta }) |
+        @Html.ActionLink("Indietro alla Lista", "Index")
+    </div>
+</div>

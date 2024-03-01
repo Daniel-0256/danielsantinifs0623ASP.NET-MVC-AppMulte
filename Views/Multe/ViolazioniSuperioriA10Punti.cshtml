@@ -1,0 +1,27 @@
+﻿@model List<AppMulte.Models.ViolazioniSuperioriA10Punti>
+
+<h2>Violazioni con Decurtamento Punti Superiore a 10</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Importo</th>
+            <th>Nome</th>
+            <th>Cognome</th>
+            <th>Data Violazione</th>
+            <th>Decurtamento Punti</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var violazione in Model)
+        {
+            <tr>
+                <td>@violazione.Importo</td>
+                <td>@violazione.Nome</td>
+                <td>@violazione.Cognome</td>
+                <td>@violazione.DataViolazione</td>
+                <td>@violazione.DecurtamentoPunti</td>
+            </tr>
+        }
+    </tbody>
+</table>

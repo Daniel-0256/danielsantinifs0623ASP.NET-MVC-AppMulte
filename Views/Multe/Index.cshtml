@@ -1,0 +1,53 @@
+﻿@model AppMulte.Models.MulteViewModel
+
+<h2>Elenco Multe</h2>
+
+<p>
+    @Html.ActionLink("Crea Nuovo", "Create")
+</p>
+<p>
+    @Html.ActionLink("Verbali per Trasgressore", "VerbaliPerTrasgressore")
+</p>
+<p>
+    @Html.ActionLink("Punti Decurtati per Trasgressore", "PuntiDecurtatiPerTrasgressore")
+</p>
+<p>
+    @Html.ActionLink("Violazioni Superiori a 10 Punti", "ViolazioniSuperioriA10Punti")
+</p>
+<p>
+    @Html.ActionLink("Violazioni con Importo Superiore a 400", "ViolazioniImportoSuperioreA400")
+</p>
+
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Trasgressore</th>
+            <th>Verbale</th>
+            <th>Violazione</th>
+            <th>Data Trascrizione Verbale</th>
+            <th>Importo</th>
+            <th>Decurtamento Punti</th>
+            <th>Azioni</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var multa in Model.Multe)
+        {
+            <tr>
+                <td>@multa.Anagrafica.Cognome, @multa.Anagrafica.Nome</td>
+                <td>@multa.Verbale.DataViolazione, @multa.Verbale.IndirizzoViolazione</td>
+                <td>@multa.Violazione.Descrizione</td>
+                <td>@multa.Verbale.DataTrascrizioneVerbale</td>
+                <td>@multa.Verbale.Importo</td>
+                <td>@multa.Verbale.DecurtamentoPunti</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@multa.IDMulta">Modifica</a> |
+                    <a asp-action="Details" asp-route-id="@multa.IDMulta">Dettagli</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

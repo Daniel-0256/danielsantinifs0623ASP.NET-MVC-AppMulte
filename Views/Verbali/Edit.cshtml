@@ -1,0 +1,33 @@
+﻿@model AppMulte.Models.Verbale
+
+<h2>Modifica Verbale</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="IDVerbale" />
+    <div class="form-group">
+        <label>Data Violazione</label>
+        <input asp-for="DataViolazione" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Indirizzo Violazione</label>
+        <input asp-for="IndirizzoViolazione" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>ID Agente</label>
+        <input asp-for="IDAgente" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Data Trascrizione Verbale</label>
+        <input asp-for="DataTrascrizioneVerbale" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Importo</label>
+        <input asp-for="Importo" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Decurtamento Punti</label>
+        <input asp-for="DecurtamentoPunti" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Salva Modifiche</button>
+</form>
+

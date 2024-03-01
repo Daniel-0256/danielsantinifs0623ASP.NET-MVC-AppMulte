@@ -1,0 +1,23 @@
+﻿@model List<AppMulte.Models.ViolazioniImportoSuperioreA400>
+
+<h2>Violazioni con Importo Superiore a 400</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID Violazione</th>
+            <th>Importo</th>
+            <th>Data Violazione</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var violazione in Model)
+        {
+            <tr>
+                <td>@violazione.Verbale.IDVerbale</td>
+                <td>@violazione.Verbale.Importo</td>
+                <td>@violazione.Verbale.DataViolazione</td>
+            </tr>
+        }
+    </tbody>
+</table>

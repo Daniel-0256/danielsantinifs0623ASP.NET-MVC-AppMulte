@@ -1,0 +1,27 @@
+﻿@model IEnumerable<AppMulte.Models.Violazione>
+
+<h2>Elenco Violazioni</h2>
+
+<p>
+    @Html.ActionLink("Crea Nuovo", "Create")
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Descrizione</th>
+            <th>Azioni</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var violazione in Model)
+        {
+            <tr>
+                <td>@violazione.Descrizione</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@violazione.IDViolazione">Modifica</a> |
+                    <a asp-action="Details" asp-route-id="@violazione.IDViolazione">Dettagli</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

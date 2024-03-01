@@ -1,0 +1,17 @@
+﻿@model AppMulte.Models.Anagrafica
+
+<h2>Dettagli Anagrafica</h2>
+
+<div>
+    <h4>Cognome: @Model.Cognome</h4>
+    <h4>Nome: @Model.Nome</h4>
+    <h4>Indirizzo: @Model.Indirizzo</h4>
+    <h4>Città: @Model.Citta</h4>
+    <h4>CAP: @Model.CAP</h4>
+    <h4>Codice Fiscale: @Model.Cod_Fisc</h4>
+</div>
+<p>
+    @Html.ActionLink("Modifica", "Edit", new { id = Model.IDAnagrafica }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Indietro alla Lista", "Index", new { }, new { @class = "btn btn-info" })
+</p>
+

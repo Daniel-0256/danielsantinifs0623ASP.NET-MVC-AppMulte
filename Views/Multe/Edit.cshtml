@@ -1,0 +1,27 @@
+﻿@model AppMulte.Models.Multa
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.IDMulta)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.IDAnagrafica)
+        @Html.TextBoxFor(model => model.IDAnagrafica, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.IDAnagrafica, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.IDVerbale)
+        @Html.TextBoxFor(model => model.IDVerbale, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.IDVerbale, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.IDViolazione)
+        @Html.TextBoxFor(model => model.IDViolazione, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.IDViolazione, "", new { @class = "text-danger" })
+    </div>
+
+    <input type="submit" value="Salva Modifiche" class="btn btn-primary" />
+}
+

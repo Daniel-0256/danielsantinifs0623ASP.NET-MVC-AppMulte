@@ -1,0 +1,28 @@
+﻿@model IEnumerable<AppMulte.Models.Agente>
+
+<h2>Agenti</h2>
+
+<p>
+    @Html.ActionLink("Crea Nuovo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>Nome</th>
+        <th>Cognome</th>
+        <th></th>
+    </tr>
+
+    @foreach (var agente in Model)
+    {
+        <tr>
+            <td>@agente.NomeAgente</td>
+            <td>@agente.CognomeAgente</td>
+            <td>
+                @Html.ActionLink("Modifica", "Edit", new { id = agente.IDAgente }) |
+                @Html.ActionLink("Dettagli", "Details", new { id = agente.IDAgente }) |
+                @Html.ActionLink("Elimina", "Delete", new { id = agente.IDAgente })
+            </td>
+        </tr>
+    }
+</table>
+
