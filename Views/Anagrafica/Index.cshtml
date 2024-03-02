@@ -1,10 +1,12 @@
 ﻿@model IEnumerable<AppMulte.Models.Anagrafica>
 
-<h2>Anagrafica</h2>
+<div class="d-flex">
+    <h2>Anagrafica</h2>
+    <button type="button" class="btn btn-info ms-5 p-0 pe-2 ps-2">
+        <a href="@Url.Action("Create")" class="btn btn-link custom-link p-0">Inserisci i dati anagrafici</a>
+    </button>
+</div>
 
-<p>
-    @Html.ActionLink("Crea Nuovo", "Create")
-</p>
 <table class="table">
     <tr>
         <th>Cognome</th>
@@ -26,11 +28,24 @@
             <td>@persona.CAP</td>
             <td>@persona.Cod_Fisc</td>
             <td>
-                @Html.ActionLink("Modifica", "Edit", new { id = persona.IDAnagrafica }) |
-                @Html.ActionLink("Dettagli", "Details", new { id = persona.IDAnagrafica }) |
-                @Html.ActionLink("Elimina", "Delete", new { id = persona.IDAnagrafica })
+                <button type="button" class="btn btn-warning">
+                    <a href="@Url.Action("Edit", new { id = persona.IDAnagrafica })" class="btn btn-link custom-link p-0">Modifica</a>
+                </button>
+                <button type="button" class="btn btn-success">
+                    <a href="@Url.Action("Details", new { id = persona.IDAnagrafica })" class="btn btn-link custom-link p-0">Dettagli</a>
+                </button>
             </td>
         </tr>
     }
 </table>
 
+
+
+<style>
+
+    .custom-link {
+        text-decoration: none;
+        color: black;
+    }
+
+</style>

@@ -1,10 +1,11 @@
 ﻿@model IEnumerable<AppMulte.Models.Verbale>
 
-<h2>Elenco Verbali</h2>
-
-<p>
-    @Html.ActionLink("Crea Nuovo", "Create")
-</p>
+<div class="d-flex">
+    <h2>Elenco Verbali</h2>
+    <button type="button" class="btn btn-info ms-5 p-0 pe-2 ps-2">
+        <a href="@Url.Action("Create")" class="btn btn-link custom-link p-0">Inserisci un nuovo verbale</a>
+    </button>
+</div>
 
 <table class="table">
     <thead>
@@ -29,10 +30,24 @@
                 <td>@verbale.Importo</td>
                 <td>@verbale.DecurtamentoPunti</td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@verbale.IDVerbale">Modifica</a> |
-                    <a asp-action="Details" asp-route-id="@verbale.IDVerbale">Dettagli</a>
+                    <button type="button" class="btn btn-warning">
+                        <a href="@Url.Action("Edit", new { id = verbale.IDVerbale })" class="btn btn-link custom-link p-0">Modifica</a>
+                    </button>
+                    <button type="button" class="btn btn-success">
+                        <a href="@Url.Action("Details", new { id = verbale.IDVerbale })" class="btn btn-link custom-link p-0">Dettagli</a>
+                    </button>
                 </td>
             </tr>
         }
     </tbody>
 </table>
+
+
+<style>
+
+    .custom-link {
+        text-decoration: none;
+        color: black;
+    }
+
+</style>

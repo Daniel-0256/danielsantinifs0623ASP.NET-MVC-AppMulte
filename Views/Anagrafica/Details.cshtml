@@ -11,7 +11,21 @@
     <h4>Codice Fiscale: @Model.Cod_Fisc</h4>
 </div>
 <p>
-    @Html.ActionLink("Modifica", "Edit", new { id = Model.IDAnagrafica }, new { @class = "btn btn-primary" })
-    @Html.ActionLink("Indietro alla Lista", "Index", new { }, new { @class = "btn btn-info" })
+    <button type="button" class="btn btn-warning">
+        <a href="@Url.Action("Edit", new { id = Model.IDAnagrafica })" class="btn btn-link custom-link p-0">Modifica</a>
+    </button>
+
+    <button type="button" class="btn btn-success">
+        <a href="@Url.Action("Index")" class="btn btn-link custom-link p-0">Torna alla Lista</a>
+    </button>
 </p>
 
+
+<style>
+
+    .custom-link {
+        text-decoration: none;
+        color: black;
+    }
+
+</style>

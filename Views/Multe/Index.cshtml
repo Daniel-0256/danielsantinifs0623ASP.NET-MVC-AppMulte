@@ -1,24 +1,25 @@
 ﻿@model AppMulte.Models.MulteViewModel
 
-<h2>Elenco Multe</h2>
 
-<p>
-    @Html.ActionLink("Crea Nuovo", "Create")
-</p>
-<p>
-    @Html.ActionLink("Verbali per Trasgressore", "VerbaliPerTrasgressore")
-</p>
-<p>
-    @Html.ActionLink("Punti Decurtati per Trasgressore", "PuntiDecurtatiPerTrasgressore")
-</p>
-<p>
-    @Html.ActionLink("Violazioni Superiori a 10 Punti", "ViolazioniSuperioriA10Punti")
-</p>
-<p>
-    @Html.ActionLink("Violazioni con Importo Superiore a 400", "ViolazioniImportoSuperioreA400")
-</p>
-
-
+<div class="d-flex align-items-center justify-content-between">
+    <div class="d-flex">
+        <h2>Elenco Multe</h2>
+        <button type="button" class="btn btn-info ms-5 p-0 pe-2 ps-2">
+            <a href="@Url.Action("Create")" class="btn btn-link custom-link p-0">Inserisci una nuova multa</a>
+        </button>
+    </div>
+    <div class="dropdown">
+        <button class="btn btn-dark dropdown-toggle" id="dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Operazioni
+        </button>
+        <ul class="dropdown-menu" id="link">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Multe" asp-action="VerbaliPerTrasgressore">Verbali per Trasgressore</a>
+            <a class="nav-link text-dark" asp-area="" asp-controller="Multe" asp-action="PuntiDecurtatiPerTrasgressore">Punti Decurtati per Trasgressore</a>
+            <a class="nav-link text-dark" asp-area="" asp-controller="Multe" asp-action="ViolazioniSuperioriA10Punti">Violazioni Superiori a 10 Punti</a>
+            <a class="nav-link text-dark" asp-area="" asp-controller="Multe" asp-action="ViolazioniImportoSuperioreA400">Violazioni con Importo Superiore a 400</a>
+        </ul>
+    </div>
+</div>
 
 
 <table class="table">
@@ -44,10 +45,36 @@
                 <td>@multa.Verbale.Importo</td>
                 <td>@multa.Verbale.DecurtamentoPunti</td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@multa.IDMulta">Modifica</a> |
-                    <a asp-action="Details" asp-route-id="@multa.IDMulta">Dettagli</a>
+                    <button type="button" class="btn btn-warning mb-2">
+                        <a href="@Url.Action("Edit", new { id = multa.IDMulta })" class="btn btn-link custom-link p-0">Modifica</a>
+                    </button>
+                    <button type="button" class="btn btn-success">
+                        <a href="@Url.Action("Details", new { id = multa.IDMulta })" class="btn btn-link custom-link p-0">Dettagli</a>
+                    </button>
                 </td>
             </tr>
         }
     </tbody>
 </table>
+
+
+<style>
+
+    #dropdown {
+        margin-right: 50px;
+        width: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #link {
+        text-align: center;
+    }
+
+    .custom-link {
+        text-decoration: none;
+        color: black;
+    }
+
+</style>

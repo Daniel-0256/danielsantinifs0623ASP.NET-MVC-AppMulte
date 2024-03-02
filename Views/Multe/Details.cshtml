@@ -17,7 +17,22 @@
         <dd class="col-sm-10">@Model.IDViolazione</dd>
     </dl>
     <div>
-        @Html.ActionLink("Modifica", "Edit", new { id = Model.IDMulta }) |
-        @Html.ActionLink("Indietro alla Lista", "Index")
+        <button type="button" class="btn btn-warning">
+            <a href="@Url.Action("Edit", new { id = Model.IDMulta })" class="btn btn-link custom-link p-0">Modifica</a>
+        </button>
+
+        <button type="button" class="btn btn-success">
+            <a href="@Url.Action("Index")" class="btn btn-link custom-link p-0">Torna alla Lista</a>
+        </button>
     </div>
 </div>
+
+
+<style>
+
+    .custom-link {
+        text-decoration: none;
+        color: black;
+    }
+
+</style>
